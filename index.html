@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="assets/octin/stylesheet.css" rel="stylesheet">
+    <link rel="icon" href="assets/iotkids.png">
+
+
+    <title>Surprise soap workshop</title>
+    <style>
+        body {
+            font-family: "octin_collegeregular";
+            background-color: #171717;
+        }
+
+        .bg-image {
+            background-image: url("assets/hiveFade.svg");
+            background-repeat: no-repeat;
+        }
+
+        .yellow {
+            background-color: #fff;
+        }
+
+        .slide-fade-enter-active {
+            transition: all .3s ease;
+        }
+
+        .slide-fade-leave-active {
+            transition: all .3s ease-out;
+        }
+
+        .slide-fade-enter, .slide-fade-leave-to
+            /* .slide-fade-leave-active below version 2.1.8 */
+        {
+            transform: translateY(-40px);
+            opacity: 0;
+        }
+
+    </style>
+</head>
+<body class="bg-image bg-cover">
+
+<div id="app" class="flex w-full justify-center lg:px-12 px-4">
+    <div class="flex w-full justify-center text-gray-900 mt-5 mb-16">
+
+        <div class="flex justify-center flex-col w-full">
+            <div class="lg:w-3/12 w-8/12">
+                <img src="assets/MakerHive-2.png" alt="">
+            </div>
+            <h1 class="lg:text-5xl text-3xl mt-8 text-white">
+                IoT Kids Maker Space Opening
+            </h1>
+
+            <div class="flex w-full lg:flex-row flex-col mt-16">
+                <div class="flex flex-col lg:w-6/12 w-full">
+                    <div @click="clicking('section1')"
+                         class="flex flex-row mt-6 cursor-pointer">
+                        <div class="w-1/12">
+                            <svg width="40px" height="40px" viewBox="0 0 70 70" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g id="Wireframe" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <circle id="Oval" fill-opacity="0.2"
+                                            v-bind:fill="active.includes('section1') ? '#fff' : '#EDAE1F'"
+                                            cx="35"
+                                            cy="35"
+                                            r="35"></circle>
+                                    <circle id="Oval" stroke="#EDAE1F" stroke-width="0.7"
+                                            v-bind:fill="active.includes('section1') ? '#fff' : '#EDAE1F'"
+                                            cx="35.5"
+                                            cy="35.5" r="19.15"></circle>
+                                </g>
+                            </svg>
+
+                        </div>
+                        <div class="ml-3 w-11/12 px-2">
+                            <h1 class="text-3xl text-white">
+                                Step 01
+                            </h1>
+                            <transition name="slide-fade">
+                                <p v-if="active.includes('section1')" class="text-xl text-gray-300 mt-3 text-justify">
+                                    Designing or downloading toy designs from online open source platforms. </p>
+                            </transition>
+                        </div>
+                    </div>
+                    <div @click="clicking('section5')"
+                         class="flex flex-row mt-6 cursor-pointer">
+                        <div class="w-1/12">
+                            <svg width="40px" height="40px" viewBox="0 0 70 70" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g id="Wireframe" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <circle id="Oval" fill-opacity="0.2"
+                                            v-bind:fill="active.includes('section5') ? '#fff' : '#EDAE1F'"
+                                            cx="35"
+                                            cy="35"
+                                            r="35"></circle>
+                                    <circle id="Oval" stroke="#EDAE1F" stroke-width="0.7"
+                                            v-bind:fill="active.includes('section5') ? '#fff' : '#EDAE1F'"
+                                            cx="35.5"
+                                            cy="35.5" r="19.15"></circle>
+                                </g>
+                            </svg>
+
+                        </div>
+                        <div class="ml-3 w-11/12 px-2">
+                            <h1 class="text-3xl text-white">
+                                Step 02
+                            </h1>
+                            <transition name="slide-fade">
+                                <p v-if="active.includes('section5')" class="text-xl text-gray-300 mt-3 text-justify">
+                                    Introduction to FDM 3D printing technology and how it works with both live video and
+                                    pre recorded video.
+                                </p>
+                            </transition>
+                        </div>
+                    </div>
+                    <div @click="clicking('section2')"
+                         class="flex flex-row mt-6 cursor-pointer">
+                        <div class="w-1/12">
+                            <svg width="40px" height="40px" viewBox="0 0 70 70" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g id="Wireframe" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <circle id="Oval" fill-opacity="0.2"
+                                            v-bind:fill="active.includes('section2') ? '#fff' : '#EDAE1F'"
+                                            cx="35"
+                                            cy="35"
+                                            r="35"></circle>
+                                    <circle id="Oval" stroke="#EDAE1F" stroke-width="0.7"
+                                            v-bind:fill="active.includes('section2') ? '#fff' : '#EDAE1F'"
+                                            cx="35.5"
+                                            cy="35.5" r="19.15"></circle>
+                                </g>
+                            </svg>
+
+                        </div>
+                        <div class="ml-3 w-11/12 px-2">
+                            <h1 class="text-3xl text-white">
+                                Step 03
+                            </h1>
+                            <transition name="slide-fade">
+                                <p v-if="active.includes('section2')" class="text-xl text-gray-300 mt-3 text-justify">
+                                    Choosing and 3D printing toy during the session with engagement from the
+                                    participants.
+                                </p>
+                            </transition>
+                        </div>
+                    </div>
+                    <div @click="clicking('section11')"
+                         class="flex flex-row mt-6 cursor-pointer">
+                        <div class="w-1/12">
+                            <?xml version="1.0" encoding="UTF-8"?>
+                            <svg width="40px" height="40px" viewBox="0 0 70 70" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g id="Wireframe" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <circle id="Oval" fill-opacity="0.2"
+                                            v-bind:fill="active.includes('section11') ? '#fff' : '#EDAE1F'"
+                                            cx="35"
+                                            cy="35"
+                                            r="35"></circle>
+                                    <circle id="Oval" stroke="#EDAE1F" stroke-width="0.7"
+                                            v-bind:fill="active.includes('section11') ? '#fff' : '#EDAE1F'"
+                                            cx="35.5"
+                                            cy="35.5" r="19.15"></circle>
+                                </g>
+                            </svg>
+
+                        </div>
+                        <div class="ml-3 w-11/12 px-2">
+                            <h1 class="text-3xl text-white">
+                                Step 04
+                            </h1>
+                            <transition name="slide-fade">
+                                <p v-if="active.includes('section11')" class="text-xl text-gray-300 mt-3 text-justify">
+                                    Soap making part starts with mold preparation and melting the soap.
+                                </p>
+                            </transition>
+                        </div>
+                    </div>
+
+                    <div @click="clicking('section4')"
+                         class="flex flex-row mt-6 cursor-pointer">
+                        <div class="w-1/12">
+                            <svg width="40px" height="40px" viewBox="0 0 70 70" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                                <g id="Wireframe" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <circle id="Oval" fill-opacity="0.2"
+                                            v-bind:fill="active.includes('section4') ? '#fff' : '#EDAE1F'"
+                                            cx="35"
+                                            cy="35"
+                                            r="35"></circle>
+                                    <circle id="Oval" stroke="#EDAE1F" stroke-width="0.7"
+                                            v-bind:fill="active.includes('section4') ? '#fff' : '#EDAE1F'"
+                                            cx="35.5"
+                                            cy="35.5" r="19.15"></circle>
+                                </g>
+                            </svg>
+
+                        </div>
+                        <div class="ml-3 w-11/12 px-2">
+                            <h1 class="text-3xl text-white">
+                                Step 05
+                            </h1>
+                            <transition name="slide-fade">
+                                <p v-if="active.includes('section4')" class="text-xl text-gray-300 mt-3 text-justify">
+                                    Placing the toys in the soap during molding process. </p>
+                            </transition>
+                        </div>
+                    </div>
+                    <div @click="clicking('section20')"
+                         class="flex flex-row mt-6 cursor-pointer">
+                        <div class="w-1/12">
+                            <svg width="40px" height="40px" viewBox="0 0 70 70" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                                <g id="Wireframe" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <circle id="Oval" fill-opacity="0.2"
+                                            v-bind:fill="active.includes('section20') ? '#fff' : '#EDAE1F'"
+                                            cx="35"
+                                            cy="35"
+                                            r="35"></circle>
+                                    <circle id="Oval" stroke="#EDAE1F" stroke-width="0.7"
+                                            v-bind:fill="active.includes('section20') ? '#fff' : '#EDAE1F'"
+                                            cx="35.5"
+                                            cy="35.5" r="19.15"></circle>
+                                </g>
+                            </svg>
+
+                        </div>
+                        <div class="ml-3 w-11/12 px-2">
+                            <h1 class="text-3xl text-white">
+                                Step 06
+                            </h1>
+                            <transition name="slide-fade">
+                                <p v-if="active.includes('section20')" class="text-xl text-gray-300 mt-3 text-justify">
+                                    Solidification of the soap and final results.
+                                </p>
+                            </transition>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col lg:w-6/12 w-full">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    let vue = new Vue({
+        el: '#app',
+        data: {
+            active: ['section1'],
+            color: '#EDAE1F'
+        },
+        methods: {
+            clicking(section) {
+
+                if (this.active.includes(section)) {
+
+                    let index = this.active.indexOf(section)
+                    this.active.splice(index, 1)
+                    // console.log(this.active)
+
+                } else {
+                    this.active.push(section)
+                }
+
+            }, mounted() {
+                this.clicking()
+            }
+        }
+    })
+</script>
+</body>
+</html>
+
+<!--<a href="https://blog.tailwindcss.com/tailwindcss-v2"-->
+<!--   class="grid md:grid-cols-8 xl:grid-cols-9 items-start relative rounded-xl p-3 sm:p-5 xl:p-6 overflow-hidden hover:bg-white">-->
+<!--    <h3 class="font-semibold text-gray-900 md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 mb-1 ml-9 md:ml-0">-->
+<!--        Tailwind CSS v2.0</h3>-->
+<!--    <time datetime="2020-11-18T17:45:00.000Z"-->
+<!--          class="md:col-start-1 md:col-span-2 row-start-1 md:row-end-3 flex items-center font-medium mb-1 md:mb-0">-->
+<!--        <svg viewBox="0 0 12 12" class="w-3 h-3 mr-6 overflow-visible text-cyan-400">-->
+<!--            <circle cx="6" cy="6" r="6" fill="currentColor"></circle>-->
+<!--            <circle cx="6" cy="6" r="11" fill="none" stroke="currentColor"-->
+<!--                    stroke-width="2"></circle>-->
+<!--            <path d="M 6 18 V 500" fill="none" stroke-width="2" stroke="currentColor"-->
+<!--                  class="text-gray-200"></path>-->
+<!--        </svg>-->
+<!--        Nov 18, 2020-->
+<!--    </time>-->
+<!--    <p class="md:col-start-3 md:col-span-6 xl:col-span-7 ml-9 md:ml-0">Today we're finally releasing-->
+<!--        Tailwind CSS v2.0, including an all-new color palette, dark mode support, and tons more!</p>-->
+<!--</a>-->
+
+<!--#fff-->
+
